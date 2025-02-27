@@ -1,27 +1,27 @@
-# 📝 Task Management App  
+# 📝 Task Management App
 
 ![Task Management App](https://img.shields.io/badge/Status-Live-brightgreen)  
-Live Demo: [Task Management App](https://splendid-daffodil-d9de57.netlify.app/)  
+Live Demo: [Task Management App](https://splendid-daffodil-d9de57.netlify.app/)
 
-## 🚀 Introduction  
+## 🚀 Introduction
 
-Task Management App is a modern, real-time task management system that allows users to create, edit, delete, and reorder tasks using an intuitive **drag-and-drop** interface. Tasks are categorized into **To-Do, In Progress,** and **Done**, with real-time updates to ensure smooth synchronization across devices.  
+Task Management App is a modern, real-time task management system that allows users to create, edit, delete, and reorder tasks using an intuitive **drag-and-drop** interface. Tasks are categorized into **To-Do, In Progress,** and **Done**, with real-time updates to ensure smooth synchronization across devices.
 
-## 📜 Table of Contents  
+## 📜 Table of Contents
 
-- [Features](#-features)  
-- [Live Demo](#-live-demo)  
-- [Tech Stack](#-tech-stack)  
-- [Installation](#-installation)  
-- [Usage](#-usage)  
-- [API Endpoints](#-api-endpoints)  
-- [Authentication](#-authentication)  
-- [Database Schema](#-database-schema)  
-- [Bonus Features](#-bonus-features)  
-- [Contributors](#-contributors)  
-- [License](#-license)  
+- [Features](#-features)
+- [Live Demo](#-live-demo)
+- [Tech Stack](#-tech-stack)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [API Endpoints](#-api-endpoints)
+- [Authentication](#-authentication)
+- [Database Schema](#-database-schema)
+- [Bonus Features](#-bonus-features)
+- [Contributors](#-contributors)
+- [License](#-license)
 
-## ✨ Features  
+## ✨ Features
 
 ✔ **User Authentication** (Google Sign-in via Firebase)  
 ✔ **Drag & Drop Task Management**  
@@ -29,111 +29,107 @@ Task Management App is a modern, real-time task management system that allows us
 ✔ **Real-Time Updates** (WebSockets or Change Streams)  
 ✔ **Fully Responsive UI** (Works on Desktop & Mobile)  
 ✔ **Optimistic UI Updates** for a seamless experience  
-✔ **Dark Mode Toggle** (Bonus Feature)  
+✔ **Dark Mode Toggle** (Bonus Feature)
 
-## 🌍 Live Demo  
+## 🌍 Live Demo
 
-🔗 **[Try it Now](https://splendid-daffodil-d9de57.netlify.app/)**  
+🔗 **[Try it Now](https://splendid-daffodil-d9de57.netlify.app/)**
 
-## 🛠 Tech Stack  
+## 🛠 Tech Stack
 
-- **Frontend:** React (Vite.js), react-beautiful-dnd  
-- **Backend:** Node.js, Express.js, MongoDB  
-- **Authentication:** Firebase (Google Sign-in)  
-- **Real-Time Sync:** MongoDB Change Streams / WebSockets  
-- **Deployment:** Netlify (Frontend), Render / Heroku (Backend)  
+- **Frontend:** React (Vite.js), react-beautiful-dnd
+- **Backend:** Node.js, Express.js, MongoDB
+- **Authentication:** Firebase (Google Sign-in)
+- **Real-Time Sync:** MongoDB Change Streams / WebSockets
+- **Deployment:** Netlify (Frontend), Render / Heroku (Backend)
 
-## 📥 Installation  
+## 📥 Installation
 
-1. **Clone the Repository:**  
+1. **Clone the Repository:**
+
    ```bash
    git clone https://github.com/yourusername/task-management-app.git
    cd task-management-app
    ```
 
-2. **Install Dependencies:**  
-   - **Frontend**  
+2. **Install Dependencies:**
+
+   - **Frontend**
+
      ```bash
      cd client
      npm install
      ```
 
-   - **Backend**  
+   - **Backend**
      ```bash
      cd server
      npm install
      ```
 
 3. **Set Up Environment Variables:**  
-   Create a `.env` file in the `server` directory and add:  
+   Create a `.env` file in the `server` directory and add:
+
    ```env
    MONGO_URI=your_mongodb_connection_string
    FIREBASE_API_KEY=your_firebase_api_key
    JWT_SECRET=your_secret_key
    ```
 
-4. **Run the Application:**  
-   - **Start Backend:**  
+4. **Run the Application:**
+
+   - **Start Backend:**
+
      ```bash
      cd server
      npm start
      ```
 
-   - **Start Frontend:**  
+   - **Start Frontend:**
      ```bash
      cd client
      npm run dev
      ```
 
-5. Open [http://localhost:5173](http://localhost:5173) in your browser.  
+5. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-## 📖 Usage  
+## 📖 Usage
 
-- **Sign in** using Google authentication.  
-- **Add tasks** by entering a title and description.  
-- **Drag & Drop tasks** between **To-Do, In Progress, and Done**.  
-- **Edit or Delete tasks** instantly.  
-- **Reorder tasks** within categories.  
-- **Refresh the page**, and your tasks remain unchanged.  
+- **Sign in** using Google authentication.
+- **Add tasks** by entering a title and description.
+- **Drag & Drop tasks** between **To-Do, In Progress, and Done**.
+- **Edit or Delete tasks** instantly.
+- **Reorder tasks** within categories.
+- **Refresh the page**, and your tasks remain unchanged.
 
-## 📡 API Endpoints  
+## 📡 API Endpoints
 
-| Method | Endpoint          | Description |
-|--------|------------------|-------------|
-| **POST** | `/tasks` | Create a new task |
-| **GET** | `/tasks` | Get all tasks for the user |
-| **PUT** | `/tasks/:id` | Update task details |
-| **DELETE** | `/tasks/:id` | Remove a task |
+| Method     | Endpoint     | Description                |
+| ---------- | ------------ | -------------------------- |
+| **POST**   | `/tasks`     | Create a new task          |
+| **GET**    | `/tasks`     | Get all tasks for the user |
+| **PUT**    | `/tasks/:id` | Update task details        |
+| **DELETE** | `/tasks/:id` | Remove a task              |
 
-## 🔑 Authentication  
+## 🔑 Authentication
 
-- Users must sign in via **Firebase Authentication (Google Sign-in)**.  
-- On first login, user details (User ID, email, display name) are stored in MongoDB.  
-- The frontend ensures only authenticated users access the app.  
+- Users must sign in via **Firebase Authentication (Google Sign-in)**.
+- On first login, user details (User ID, email, display name) are stored in MongoDB.
+- The frontend ensures only authenticated users access the app.
 
-## 🗄 Database Schema  
-
-```json
-{
-  "_id": "ObjectId",
-  "userId": "FirebaseUserId",
-  "title": "Complete project setup",
-  "description": "Install dependencies and set up environment variables",
-  "category": "To-Do",
-  "timestamp": "2025-02-28T12:00:00Z"
-}
 ```
 
-## 🌟 Bonus Features  
+## 🌟 Bonus Features
 
-- **🌓 Dark Mode Toggle**  
-- **📅 Task Due Dates with Color Indicators** (e.g., overdue tasks appear red)  
-- **📜 Activity Log** (Track changes like "Task moved to Done")  
+- **🌓 Dark Mode Toggle**
+- **📅 Task Due Dates with Color Indicators** (e.g., overdue tasks appear red)
+- **📜 Activity Log** (Track changes like "Task moved to Done")
 
-## 🤝 Contributors  
+## 🤝 Contributors
 
-- **[Your Name](https://github.com/yourusername)**  
+- **[Your Name](https://github.com/yourusername)**
 
-## 📜 License  
+## 📜 License
 
-This project is licensed under the **MIT License**.  
+This project is licensed under the **MIT License**.
+```
