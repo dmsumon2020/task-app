@@ -8,7 +8,7 @@ const TaskColumn = ({ title, status }) => {
     accept: ItemTypes.TASK,
     drop: (item) => {
       // Call function to update task status
-      item.updateTaskStatus({ taskId: item.id, newStatus: status });
+      item.updateTaskStatus(item.id, status);
     },
   });
 

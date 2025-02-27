@@ -5,9 +5,9 @@ import { useAuth } from "../../Context/AuthContext";
 import TaskItem from "../TaskItem/TaskItem";
 import { toast } from "react-hot-toast";
 
-const fetchTasks = async (userId, status) => {
+const fetchTasks = async (userId, category) => {
   const { data } = await axios.get(
-    `http://localhost:5000/tasks/category/${status}?userId=${userId}`
+    `http://localhost:5000/tasks/category/${category}?userId=${userId}`
   );
   return data;
 };

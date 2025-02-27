@@ -4,6 +4,7 @@ import axios from "axios";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-hot-toast";
 import { ItemTypes } from "../../constants/ItemTypes";
+//import { ItemTypes } from "../../constants/ItemTypes";
 
 const TaskItem = ({ task, updateTaskStatus }) => {
   const queryClient = useQueryClient();
