@@ -13,7 +13,9 @@ const TaskItem = ({ task, updateTaskStatus }) => {
 
   const deleteTask = useMutation({
     mutationFn: async () => {
-      await axios.delete(`http://localhost:5000/tasks/${task._id}`);
+      await axios.delete(
+        `https://task-server-peach-ten.vercel.app/tasks/${task._id}`
+      );
     },
     onSuccess: () => {
       toast.success("Task deleted");
@@ -26,11 +28,14 @@ const TaskItem = ({ task, updateTaskStatus }) => {
 
   const updateTask = useMutation({
     mutationFn: async () => {
-      await axios.put(`http://localhost:5000/tasks/${task._id}`, {
-        title: editedTitle,
-        description: editedDescription,
-        status: task.status, // Include status in the update request
-      });
+      await axios.put(
+        `https://task-server-peach-ten.vercel.app/tasks/${task._id}`,
+        {
+          title: editedTitle,
+          description: editedDescription,
+          status: task.status, // Include status in the update request
+        }
+      );
     },
     onSuccess: () => {
       toast.success("Task updated");

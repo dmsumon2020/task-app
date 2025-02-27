@@ -16,7 +16,10 @@ const AddTaskForm = () => {
 
   const addTask = useMutation({
     mutationFn: async (newTask) => {
-      await axios.post("http://localhost:5000/tasks", newTask);
+      await axios.post(
+        "https://task-server-peach-ten.vercel.app/tasks",
+        newTask
+      );
     },
     onSuccess: () => {
       toast.success("Task added!");

@@ -7,7 +7,7 @@ import { toast } from "react-hot-toast";
 
 const fetchTasks = async (userId, status) => {
   const { data } = await axios.get(
-    `http://localhost:5000/tasks/category/${status}?userId=${userId}`
+    `https://task-server-peach-ten.vercel.app/tasks/category/${status}?userId=${userId}`
   );
   return data;
 };
@@ -28,9 +28,12 @@ const TaskList = ({ status }) => {
 
   const updateTaskStatus = useMutation({
     mutationFn: async ({ taskId, newStatus }) => {
-      await axios.put(`http://localhost:5000/tasks/${taskId}`, {
-        status: newStatus,
-      });
+      await axios.put(
+        `https://task-server-peach-ten.vercel.app/tasks/${taskId}`,
+        {
+          status: newStatus,
+        }
+      );
     },
     onSuccess: () => {
       toast.success("Task status updated");
