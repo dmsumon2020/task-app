@@ -119,12 +119,6 @@ Task Management App is a modern, real-time task management system that allows us
 
 ```
 
-## 🌟 Bonus Features
-
-- **🌓 Dark Mode Toggle**
-- **📅 Task Due Dates with Color Indicators** (e.g., overdue tasks appear red)
-- **📜 Activity Log** (Track changes like "Task moved to Done")
-
 ## 🤝 Contributors
 
 - **[Your Name](https://github.com/yourusername)**
